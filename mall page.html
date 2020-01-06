@@ -1,47 +1,103 @@
 <!doctype html>
 <html lang="en">
-  <head>
-		
-		<!-- Webpage Title -->
-    <title>무엇이든 팔아요!</title>
+<head>
 
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Webpage Title -->
+  <title>무엇이든 팔아요!</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-		
-		<!-- JS -->		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <style type="text/css">
-      .margin{
-        margin: 100px;
-      }
-    </style>
-    
-  </head>
-  <body>
-    <div class="card margin" style="width: 18ren;">
-      <img class="card-img-top" src="https://www.emergingrnleader.com/wp-content/uploads/2013/06/OneThing3dLeft.png" alt="card image cap">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- JS -->		
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <style type="text/css">
+    .margin{
+      margin: 50px 100px;
+
+    }
+    .text{
+      margin: auto;
+    }
+    .label{
+      margin: 10px auto;
+    }
+    .order-btn{
+      width: 650px;
+      margin: 20px 20px 0;
+
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="card margin" >
+    <img class="card-img-top" src="https://file.mk.co.kr/meet/neds/2018/03/image_readtop_2018_188888_15218388623249125.jpeg" alt="card image cap">
+  </div>
+  
+  <div class="container">
+    <div class="row align-items-end text">
+      <div class="col-6">
+        <h1>Weihenstephaner VITUS</h1><h3>바이엔슈테판 비투스</h3>
+      </div>
+      <div class="col-4">
+        <h6>가격: 7000원 </h6>
+      </div>
     </div>
-
     <div>
-      <h1>상품제목<p>가격</p></h1>
-      
+      바이엔슈테판 비투스는 현존하는 최고의 양조장에서 만든 최고의 맥주다. 비투스는 기원후 1040년 독일 바이에른 베네딕토회 수도원에 만든 양조장에서 생산한다. 이 양조장은 가장 역사가 긴 양조장으로 기네스북에 등재된 곳이다. 비투스는 저명한 맥주 대회인 ‘월드 비어 어워즈’(WBA)에서 각 부문에서 3년간 총 9개의 금메달을 획득한, 믿고 마실 만한 술이기도 하다.
     </div>
-    
-    <h5>
-      상품설명
-    </h5>
+    <div>-</div>
+    <div class="label">주문자 성함 </div>
+    <div class="form-group">
+      <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp">
+    </div>
 
+    <div class="label">수량</div>
+    <div class="form-group">
+      <select id="disabledSelect" class="form-control">
+        <option>1병 - 7000원</option>
+        <option>2병 - 14000원</option>
+        <option>3병 - 21000</option>
+        <option>더이상은 안돼요!</option>
+      </select>
+    </div>
 
+    <div class="form-group">
+    <label for="inputAddress">주소</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="도로명 주소">
+  </div>
 
+    <div class="label">주민번호</div>
+    <form>
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="앞6자리">
+        </div>
+        <div class="col">
+          <input type="password" class="form-control" placeholder="뒷7자리">
+        </div>
+      </div>
+    </form>
 
-    <button type="button" class="btn btn-primary" width: 100px;>
-    주문하기
-    </button>
-  </body>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+      <label class="form-check-label" for="invalidCheck">
+        성인입니다.
+      </label>
+      <div class="invalid-feedback">
+        애들은 가라!
+      </div>
+
+    </div>
+    <button class="btn btn-primary order-btn" type="submit">주문하기</button>    
+  </div>
+
+</body>
 </html>
