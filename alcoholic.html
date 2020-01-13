@@ -46,6 +46,13 @@
   </style>
 
   <script type="text/javascript">
+    // function confirm (){
+    //   let security4 = $('#security1').val();
+    //   if security4 == 
+    // }
+
+
+
     // 주문자성함
     function order(){
       let name2 = $('#name').val();
@@ -54,32 +61,45 @@
       let select2 = $('#select1').val();
 
 
-
-      if (name2 == ''){
-
-        alert('주문자 성함을 입력해주세요');
-
-      } else if(true) {
-
-
-        if(security2 == ''){
-          alert('주민번호를 입력하세요');
-        } else if(true) {
-          if(security3 == ''){
-            alert('주민번호를 입력하세요');
-          }
-        }
-
-
-      } else if(true) {
-
-        if(select2 == ''){
-          alert('수량을 선택해주세요');
-        }
+      if(name2 == ''){
+        alert('이름을 입력해주세요')
+        return
+      } else if (security2 == ''){
+        alert('주민번호를 입력해주세요')
+        return
+      } else if (select2 == ''){
+        alert('수량을 선택해주세요')
+        return
       }
+}
 
 
-    } 
+
+    //   if (name2 == ''){
+
+    //     alert('주문자 성함을 입력해주세요');
+
+    //   } else if(true) {
+
+
+    //     if(security2 == ''){
+    //       alert('주민번호를 입력하세요');
+    //     } else if(true) {
+    //       if(security3 == ''){
+    //         alert('주민번호를 입력하세요');
+    //       }
+    //     }
+
+
+    //   } else if(true) {
+
+    //     if(select2 == 1){
+    //       alert('수량을 선택해주세요');
+    //     }
+    //   }
+
+
+    // } 
 
 
 
@@ -158,12 +178,12 @@
           <div class="input-group-text">수량
           </div>
         </div>
-        <select id="select1" class="form-control" placeholder="">
-          <option selected value>수량을 선택하세요</option>
-          <option value="1">1병 - 7000원</option>
-          <option value="2">2병 - 14000원</option>
-          <option value="3">3병 - 21000원</option>
-          <option value="4">더이상은 안돼요!</option>
+        <select id="select1" class="custom-select">
+          <option selected value> -- 수량을 선택하세요 -- </option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          
         </select>
       </div>
     </div>
@@ -201,7 +221,7 @@
         <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="">
       </div>
     </div>
-    <button onclick = "order()" class="btn btn-primary order-btn" >
+    <button onclick="order()" class = "btn btn-primary order-btn">
       <h3>주문하기</h3>
     </button>
   </div>
