@@ -59,47 +59,59 @@
       let security2 = $('#security').val();
       let security3 = $('#security1').val();
       let select2 = $('#select1').val();
+      let address2 = $('#address').val();
+      let tele2 = $('#tele').val();
+      let phone2 = $('#phone').val();
 
 
       if(name2 == ''){
         alert('이름을 입력해주세요')
+        $('#name').focus()
         return
       } else if (security2 == ''){
         alert('주민번호를 입력해주세요')
+        $('#security').focus()
+        return
+      } else if (security3 == ''){
+        alert('주민번호 뒷자리를 입력해주세요')
+        $('#security1').focus()
         return
       } else if (select2 == ''){
         alert('수량을 선택해주세요')
+        $('#select1').focus()
+        return
+      } else if (address2 == ''){
+        alert('주소를 입력하세요')
+        $('#address').focus()
+        return
+      } else if (tele2 == ''){
+        alert('통신사를 선택하세요')
+        $('#tele').focus()
+        return
+      } else if (phone2 == ''){
+        alert('핸드폰번호를 입력하세요')
+        $('#phone').focus()
+        return
+      } else if (phone2[1] != '1'){
+        alert('휴대폰번호 형식이 틀립니다. 010-0000-0000으로 입력해주세요')
+        $('#phone').focus()
+        return
+      } else if (phone2[3] != '-'){
+        alert('휴대폰번호 형식이 틀립니다. 010-0000-0000으로 입력해주세요')
+        $('#phone').focus()
+        return
+      } else if (phone2[8] != '-'){
+        alert('휴대폰번호 형식이 틀립니다. 010-0000-0000으로 입력해주세요')
+        $('#phone').focus()
+        return
+      } else {
+        alert('주문이 완료되었습니다')
         return
       }
-}
+    }
 
 
-
-    //   if (name2 == ''){
-
-    //     alert('주문자 성함을 입력해주세요');
-
-    //   } else if(true) {
-
-
-    //     if(security2 == ''){
-    //       alert('주민번호를 입력하세요');
-    //     } else if(true) {
-    //       if(security3 == ''){
-    //         alert('주민번호를 입력하세요');
-    //       }
-    //     }
-
-
-    //   } else if(true) {
-
-    //     if(select2 == 1){
-    //       alert('수량을 선택해주세요');
-    //     }
-    //   }
-
-
-    // } 
+//반환값을 만들고 if문 또는 if else를 사용하는 경우보다 조건이 안맞으면 바로 리턴하는 경우가 읽기 쉽다
 
 
 
@@ -107,13 +119,15 @@
 
 
 
-    
-
-    
 
 
 
-  </script>
+
+
+
+
+
+</script>
 
 
 
@@ -183,6 +197,7 @@
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
+
           
         </select>
       </div>
@@ -196,7 +211,7 @@
           <div class="input-group-text">주소
           </div>
         </div>
-        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="도로명 주소">
+        <input type="text" class="form-control" id="address" placeholder="도로명 주소">
       </div>
     </div>
 
@@ -207,9 +222,8 @@
           <div class="input-group-text">연락처
           </div>
         </div>
-
-        <select id="disabledSelect" class="form-control">
-          <option>통신사</option>
+        <select id="tele" class="form-control">
+          <option selected value>통신사</option>
           <option>SKT</option>
           <option>KT</option>
           <option>LG U+</option>
@@ -218,7 +232,7 @@
           <option>알뜰 LG U+</option>
         </select>
 
-        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="">
+        <input type="text" class="form-control" id="phone" placeholder="">
       </div>
     </div>
     <button onclick="order()" class = "btn btn-primary order-btn">
