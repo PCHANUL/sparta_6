@@ -63,6 +63,8 @@
       let tele2 = $('#tele').val();
       let phone2 = $('#phone').val();
 
+      var phoneRule = /^\d{3}-\d{3,4}-\d{4}$/;
+
 
       if(name2 == ''){
         alert('이름을 입력해주세요')
@@ -92,15 +94,7 @@
         alert('핸드폰번호를 입력하세요')
         $('#phone').focus()
         return
-      } else if (phone2[1] != '1'){
-        alert('휴대폰번호 형식이 틀립니다. 010-0000-0000으로 입력해주세요')
-        $('#phone').focus()
-        return
-      } else if (phone2[3] != '-'){
-        alert('휴대폰번호 형식이 틀립니다. 010-0000-0000으로 입력해주세요')
-        $('#phone').focus()
-        return
-      } else if (phone2[8] != '-'){
+      } else if (!phoneRule.test($("input[id='phone']").val())){
         alert('휴대폰번호 형식이 틀립니다. 010-0000-0000으로 입력해주세요')
         $('#phone').focus()
         return
