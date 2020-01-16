@@ -90,6 +90,17 @@
         var regNumber = /^[0-9]{6}$/;
         var phoneRule = /^\d{3}-\d{3,4}-\d{4}$/;
 
+        //리스트추가
+        let temp_html =  '<tr id = "orderList">\
+        <th scope = "row">1</th>\
+        <td>박찬울</td>\
+        <td>서울시 도봉구 방학로15길 40</td>\
+        <td>010-4781-6387</td>\
+        </tr>';
+        
+        
+
+
 
 
         if(name2 == ''){
@@ -131,12 +142,13 @@
           return
         } else {
           alert('주문이 완료되었습니다')
+          $('#orderList').append(temp_html)
           return
         }
       }
 
 
-//반환값을 만들고 if문 또는 if else를 사용하는 경우보다 조건이 안맞으면 바로 리턴하는 경우가 읽기 쉽다
+      //반환값을 만들고 if문 또는 if else를 사용하는 경우보다 조건이 안맞으면 바로 리턴하는 경우가 읽기 쉽다
 
 
 
@@ -152,149 +164,143 @@
 
 
 
-</script>
+    </script>
 
 
 
-</head>
+  </head>
 
 
-<body>
-  <div class="card margin" >
-    <img class="card-img-top" src="https://file.mk.co.kr/meet/neds/2018/03/image_readtop_2018_188888_15218388623249125.jpeg" alt="card image cap">
-  </div>
-  <div class= "container">
-    <h1><strong><em>Weihenstephaner VITUS</strong></em></h1>
-  </div>
-  <div class="container">
-    <div class="row align-items-end text">
-      <div class="col-6">
-        <h3>바이엔슈테판 비투스</h3>
-      </div>
-      <div class="col-4">
-        <h6>가격: 7000원 </h6>
-      </div>
+  <body>
+    <div class="card margin" >
+      <img class="card-img-top" src="https://file.mk.co.kr/meet/neds/2018/03/image_readtop_2018_188888_15218388623249125.jpeg" alt="card image cap">
     </div>
-    <div>
-      바이엔슈테판 비투스는 현존하는 최고의 양조장에서 만든 최고의 맥주다. 비투스는 기원후 1040년 독일 바이에른 베네딕토회 수도원에 만든 양조장에서 생산한다. 이 양조장은 가장 역사가 긴 양조장으로 기네스북에 등재된 곳이다. 비투스는 저명한 맥주 대회인 ‘월드 비어 어워즈’(WBA)에서 각 부문에서 3년간 총 9개의 금메달을 획득한, 믿고 마실 만한 술이기도 하다.
+    <div class= "container">
+      <h1><strong><em>Weihenstephaner VITUS</strong></em></h1>
     </div>
-    
-
-
-    <div class="col-auto label">
-      <label class="sr-only" for="inlineFormInputGroup">Username</label>
-      <div class="input-group mb-2">
-        <div class="input-group-prepend">
-          <div class="input-group-text">주문자 성함
-          </div>
+    <div class="container">
+      <div class="row align-items-end text">
+        <div class="col-6">
+          <h3>바이엔슈테판 비투스</h3>
         </div>
-        <input type="text" class="form-control" id="name" placeholder="">
-      </div>
-    </div>
-    
-
-    <div class="col-auto label">
-      <label class="sr-only" for="inlineFormInputGroup">Username</label>
-      <div class="input-group mb-2">
-        <div class="input-group-prepend">
-          <div class="input-group-text">주민번호
-          </div>
+        <div class="col-4">
+          <h6>가격: 7000원 </h6>
         </div>
-        <input type="text" class="form-control" id="security" placeholder="">
-        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </div>
-        <input type="password" class="form-control" id="security1" placeholder="">
-        <button onclick = "confirm()" class="btn btn-primary" type="submit">
-          성인인증
-        </button> 
       </div>
-    </div>
+      <div>
+        바이엔슈테판 비투스는 현존하는 최고의 양조장에서 만든 최고의 맥주다. 비투스는 기원후 1040년 독일 바이에른 베네딕토회 수도원에 만든 양조장에서 생산한다. 이 양조장은 가장 역사가 긴 양조장으로 기네스북에 등재된 곳이다. 비투스는 저명한 맥주 대회인 ‘월드 비어 어워즈’(WBA)에서 각 부문에서 3년간 총 9개의 금메달을 획득한, 믿고 마실 만한 술이기도 하다.
+      </div>
 
 
-    <div class="col-auto label">
-      <label class="sr-only" for="inlineFormInputGroup">Username</label>
-      <div class="input-group mb-2">
-        <div class="input-group-prepend">
-          <div class="input-group-text">수량
+
+      <div class="col-auto label">
+        <label class="sr-only" for="inlineFormInputGroup">Username</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">주문자 성함
+            </div>
           </div>
+          <input type="text" class="form-control" id="name" placeholder="">
         </div>
-        <select id="select1" class="custom-select">
-          <option selected value> -- 수량을 선택하세요 -- </option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-
-          
-        </select>
       </div>
-    </div>
 
 
-    <div class="col-auto label">
-      <label class="sr-only" for="inlineFormInputGroup">Username</label>
-      <div class="input-group mb-2">
-        <div class="input-group-prepend">
-          <div class="input-group-text">주소
+      <div class="col-auto label">
+        <label class="sr-only" for="inlineFormInputGroup">Username</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">주민번호
+            </div>
           </div>
+          <input type="text" class="form-control" id="security" placeholder="">
+          <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </div>
+          <input type="password" class="form-control" id="security1" placeholder="">
+          <button onclick = "confirm()" class="btn btn-primary" type="submit">
+            성인인증
+          </button> 
         </div>
-        <input type="text" class="form-control" id="address" placeholder="도로명 주소">
       </div>
-    </div>
 
-    <div class="col-auto label">
-      <label class="sr-only" for="inlineFormInputGroup">Username</label>
-      <div class="input-group mb-2">
-        <div class="input-group-prepend">
-          <div class="input-group-text">연락처
+
+      <div class="col-auto label">
+        <label class="sr-only" for="inlineFormInputGroup">Username</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">수량
+            </div>
           </div>
-        </div>
-        <select id="tele" class="form-control">
-          <option selected value>통신사</option>
-          <option>SKT</option>
-          <option>KT</option>
-          <option>LG U+</option>
-          <option>알뜰 SKT</option>
-          <option>알뜰 KT</option>
-          <option>알뜰 LG U+</option>
-        </select>
+          <select id="select1" class="custom-select">
+            <option selected value> -- 수량을 선택하세요 -- </option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
 
-        <input type="text" class="form-control" id="phone" placeholder="">
+
+          </select>
+        </div>
+      </div>
+
+
+      <div class="col-auto label">
+        <label class="sr-only" for="inlineFormInputGroup">Username</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">주소
+            </div>
+          </div>
+          <input type="text" class="form-control" id="address" placeholder="도로명 주소">
+        </div>
+      </div>
+
+      <div class="col-auto label">
+        <label class="sr-only" for="inlineFormInputGroup">Username</label>
+        <div class="input-group mb-2">
+          <div class="input-group-prepend">
+            <div class="input-group-text">연락처
+            </div>
+          </div>
+          <select id="tele" class="form-control">
+            <option selected value>통신사</option>
+            <option>SKT</option>
+            <option>KT</option>
+            <option>LG U+</option>
+            <option>알뜰 SKT</option>
+            <option>알뜰 KT</option>
+            <option>알뜰 LG U+</option>
+          </select>
+
+          <input type="text" class="form-control" id="phone" placeholder="">
+        </div>
+      </div>
+      <button onclick="order()" class = "btn btn-primary order-btn">
+        <h3>주문하기</h3>
+      </button>
+
+
+      <div>
+        <table class = "table tableMargin">
+          <thread>
+            <tr>
+              <th scope = "col">#</th> 
+              <th scope = "col">주문자</th>     
+              <th scope = "col">주소</th>
+              <th scope = "col">연락처</th>
+              <th scope = "col">수량</th>
+            </tr>
+          </thread>
+          <tbody id = "orderList">
+
+
+
+          </tbody>
+
+
+
+        </table>
       </div>
     </div>
-    <button onclick="order()" class = "btn btn-primary order-btn">
-      <h3>주문하기</h3>
-    </button>
- 
-
-
-  <table class = "table tableMargin">
-    <thread>
-      <tr>
-        <th scope = "col">#</th> 
-        <th scope = "col">주문자</th>     
-        <th scope = "col">주소</th>
-        <th scope = "col">연락처</th>
-        <th scope = "col">수량</th>
-</tr>
-</thread>
-<tbody>
-
-
-  <tr>
-    <th scope = "row">1</th>
-    <td>박찬울</td>
-    <td>서울시 도봉구 방학로15길 40</td>
-    <td>010-4781-6387</td>
-  </tr>
-
-
-</tbody>
 
 
 
-  </table>
-</div>
-
-
-
-      </body>
-      </html>
+  </body>
+  </html>
