@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  
+
 
 
 
@@ -146,55 +146,71 @@
         } else if (!phoneRule.test($("input[id='phone']").val())){
           alert('휴대폰번호 형식이 틀립니다. 010-0000-0000으로 입력해주세요')
           $('#phone').focus()
+
+          
           return
-        } 
-
-        $.ajax({
-          type: "POST",
-          url: "/order",
-          data: { name_give: name2, count_give: select2, address_give: address2, phone_give: phone2 },
-          success: function(response){
-            if(response['result'] == 'success'){
-              alert('주문완료');
-              window.location.reload();
-            }
-          }
-        })
+        } else {
+          alert('주문완료!')
+          
+          let temp_html = '<tr>\
+          <td>'+name2+'</td>\
+          <td>'+select2+'</td>\
+          <td>'+address2+'</td>\
+          <td>'+phone2+'</td>\
+          </tr>';
+          $('#orders-box').append(temp_html);
+        }
       }
 
-      $(document).ready(function(){
-        $('#orders-box').html('');
-        listing();
-      });
 
-      function listing() {
-        $.ajax({
-          type: "GET",
-          url: "/order",
-          data: {},
-          success: function(response){
-            if(response['result'] == 'success') {
-              let orders = response['orders'];
-              console.log(orders);
-              for (let i = 0; i < orders.length; i++) {
-                make_card(orders[i]['name2'],orders[i]['select2'],orders[i]['address2'],orders[i]['phone2'])
-              }
-            } else {
-              alert('정보를 가져오지 못했습니다')
-            }
-          }
-        })
-      }
+//ajax 적용실패 blocked by CORS policy
+      //   $.ajax({
+      //     type: "POST",
+      //     url: "/order",
+      //     data: { name_give:name2, count_give:select2, address_give:address2, phone_give: phone2 },
+      //     success: function(response){
+      //       if(response['result'] == 'success'){
+      //         alert('주문완료');
+      //         window.location.reload();
+      //       }
+      //     }
+      //   })
+      // }
 
-      function make_card(name2,select2,address2,phone2) {
-        let temp_html = '<tr>\
-        <td>'+name2+'</td>\
-        <td>'+select2+'</td>\
-        <td>'+address2+'</td>\
-        <td>'+phone2+'</td>\
-        </tr>';
-        $('#orders-box').append(temp_html);
-      }
+      // $(document).ready(function(){
+      //   $('#orders-box').html('');
+      //   listing();
+      // });
+
+      // function listing() {
+      //   $.ajax({
+      //     type: "GET",
+      //     url: "/order",
+      //     data: {},
+      //     success: function(response){
+      //       if(response['result'] == 'success') {
+      //         let orders = response['orders'];
+      //         console.log(orders);
+      //         for (let i = 0; i < orders.length; i++) {
+      //           make_card(orders[i]['name2'],orders[i]['select2'],orders[i]['address2'],orders[i]['phone2'])
+      //         }
+      //       } else {
+      //         alert('정보를 가져오지 못했습니다')
+      //       }
+      //     }
+      //   })
+      // }
+
+      // function make_card(name2,select2,address2,phone2) {
+
+      //   let temp_html = '<tr>\
+      //   <td>'+name2+'</td>\
+      //   <td>'+select2+'</td>\
+      //   <td>'+address2+'</td>\
+      //   <td>'+phone2+'</td>\
+      //   </tr>';
+      //   $('#orders-box').append(temp_html);
+      // }
 
 
 
@@ -326,9 +342,9 @@
         </div>
       </div>
       <div class="order">
-      <button onclick="order()" class = "btn btn-primary order-btn">
-        <h3>주문하기</h3>
-      </button>
+        <button onclick="order(), make_card()" class = "btn btn-primary order-btn">
+          <h3>주문하기</h3>
+        </button>
       </div>
 
 
