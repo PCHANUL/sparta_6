@@ -74,10 +74,10 @@
               let text5 = $('#input-q5').val();
               if(text5.indexOf('@') !=-1){
 
-                let result5 = text5.split('@')
-                let result51 = result5[1].split('.')
+                let result5 = text5.split('@')[1].split('.')[0];
+               
                 
-                $('#domain-q5').text(result51[0])
+                $('#domain-q5').text(result5[0])
                 $('#domain-q5').show();
                 $('#warning-q5').hide();
 
